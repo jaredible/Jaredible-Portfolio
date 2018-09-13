@@ -1,0 +1,143 @@
+doctype html
+html(lang='en')
+    head
+        title= title
+
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        meta(name='description' content='Testing Description')
+        meta(name='author' content='Testing Author')
+
+        link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic')
+        link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,700')
+
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/styles.css')
+    body
+        header(class='header')
+            div(class='container clearfix')
+                img(class='profile-image img-fluid float-left' src='/images/profile.png' alt='Jared Diehl')
+                div(class='profile-content float-left')
+                    h1(class='name') Jared Diehl
+                    h2(class='desc') Software Developer
+                    ul(class='social list-inline')
+                        li(class='list-inline-item')
+                            a(href='https://twitter.com/jaredmdiehl')
+                                i(class='fab fa-twitter')
+                        |                    
+                        li(class='list-inline-item')
+                            a(href='https://plus.google.com/109388026913305212209')
+                                i(class='fab fa-google-plus-g')
+                        |                    
+                        li(class='list-inline-item')
+                            a(href='https://www.linkedin.com/in/jared-michael-diehl/')
+                                i(class='fab fa-linkedin-in')
+                        |                    
+                        li(class='list-inline-item')
+                            a(href='https://github.com/jaredible')
+                                i(class='fab fa-github-alt')
+                        |                    
+                        li(class='list-inline-item')
+                            a(href='https://stackoverflow.com/users/story/8322371')
+                                i(class='fab fa-stack-overflow')
+                        |                    
+                        li(class='list-inline-item last-item')
+                            a(href='https://codepen.io/Jaredible')
+                                i(class='fab fa-codepen')
+                        |                    
+                    |  
+                a(class='btn btn-cta-primary float-right' href='mailto:jared@jaredible.net' target='_blank')
+                    i(class='fas fa-paper-plane')
+                    |  Contact Me
+                |               
+
+        div(class='container sections-wrapper')
+            div(class='row')
+                div(class='primary col-lg-8 col-12')
+                    section(class='about section')
+                        div(class='section-inner')
+                            h2(class='heading') About Me
+                            div(class='content')
+                                p Write a brief intro about yourself. It's a good idea to include your personal interests and hobbies as well. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec. Commodo ligula eget dolor. Aenean massa.
+
+                    section(class='latest section')
+                        div(class='section-inner')
+                            h2(class='heading') Latest Projects
+                            div(class='content')
+
+                    section(class='projects section')
+                        div(class='section-inner')
+                            h2(class='heading') Other Projects
+                            div(class='content')
+
+                    section(class='experience section')
+                        div(class='section-inner')
+                            h2(class='heading') Work Experience
+                            div(class='content')
+
+                    section(class='github section')
+                        div(class='section-inner')
+                            h2(class='heading') My GitHub
+
+                div(class='secondary col-lg-4 col-12')
+                    aside(class='info aside section')
+                        div(class='section-inner')
+                            h2(class='heading sr-only') Basic Information
+                            div(class='content')
+                                ul(class='list-unstyled')
+                                    li
+                                        i(class='fas fa-map-marker-alt')
+                                        span(class='sr-only') Location:
+                                        | St. Louis, US
+                                    li
+                                        i(class='fas fa-envelope')
+                                        span(class='sr-only') Email:
+                                        a(href='mailto:jared@jaredible.net') jared@jaredible.net
+                
+                    aside(class='skills aside section')
+                        div(class='section-inner')
+                            h2(class='heading') Skills
+                            div(class='content')
+
+                    aside(class='testimonials aside section')
+                        div(class='section-inner')
+                            h2(class='heading') Testimonials
+                            div(class='content')
+
+                    aside(class='education aside section')
+                        div(class='section-inner')
+                            h2(class='heading') Education
+                            div(class='content')
+
+                    aside(class='languages aside section')
+                        div(class='section-inner')
+                            h2(class='heading') Languages
+                            div(class='content')
+
+                    aside(class='blog aside section')
+                        div(class='section-inner')
+                            h2(class='heading') Latest Blog Posts
+                            div(class='content')
+
+                    aside(class='list music aside section')
+                        div(class='section-inner')
+                            h2(class='heading') Favourite coding music
+                            div(class='content')
+
+                    aside(class='credits aside section')
+                        div(class='section-inner')
+                            h2(class='heading') Credits
+                            div(class='content')
+
+        footer(class='footer')
+            div(class='container text-center')
+                small(class='copyright') Designed with 
+                    i(class='fas fa-heart')
+                    |  by 
+                    a(href='' ) Jared Diehl
+
+        script(src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous')
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.bundle.min.js')
+        script(defer src='https://use.fontawesome.com/releases/v5.3.1/js/all.js' integrity='sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB' crossorigin='anonymous')
+        script(src='/js/main.js')
+        block scripts

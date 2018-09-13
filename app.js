@@ -10,7 +10,7 @@ const HOST = 'localhost';
 app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', () => {
+app.get('/', (req, res) => {
     res.render('index', { title: 'Home' })
 });
 
