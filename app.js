@@ -11,7 +11,7 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-    res.render('index', { title: 'Home' })
+    res.render('index', { title: 'Portfolio'});
 });
 
 app.use((req, res, next) => {

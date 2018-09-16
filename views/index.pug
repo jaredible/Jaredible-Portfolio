@@ -14,12 +14,23 @@ html(lang='en')
         link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css')
         link(rel='stylesheet' href='/css/styles.css')
     body
+        div(id='myModal' class='modal')
+            div(class='modal-content')
+                div(class='modal-header')
+                    span(class='close') &times;
+                    h2 Modal Header
+                div(class='modal-body')
+                    p Some text in the Modal body
+                    p Some other text...
+                div(class='modal-footer')
+                    h3 Modal Footer
+                    
         header(class='header')
             div(class='container clearfix')
                 img(class='profile-image img-fluid float-left' src='/images/profile.png' alt='Jared Diehl')
                 div(class='profile-content float-left')
                     h1(class='name') Jared Diehl
-                    h2(class='desc') Software Developer
+                    h2(class='desc') Full Stack Developer
                     ul(class='social list-inline')
                         li(class='list-inline-item')
                             a(href='https://twitter.com/jaredmdiehl')
@@ -46,7 +57,7 @@ html(lang='en')
                                 i(class='fab fa-codepen')
                         |                    
                     |  
-                a(class='btn btn-cta-primary float-right' href='mailto:jared@jaredible.net' target='_blank')
+                button(id='myBtn' class='btn btn-cta-primary float-right')
                     i(class='fas fa-paper-plane')
                     |  Contact Me
                 |               
@@ -64,6 +75,34 @@ html(lang='en')
                         div(class='section-inner')
                             h2(class='heading') Latest Projects
                             div(class='content')
+                                div(class='item featured text-center')
+                                    h3(class='title')
+                                        a(href='#' target='_blank') KickStarter - Velocity
+                                    p(class='summary') A popular Bootstrap 4 theme for promoting startup products
+                                    div(class='featured-image has-ribbon')
+                                        a(href='#' target='_blank')
+                                            img(class='img-fluid project-image' src='/images/project-featured.png' alt='project name')
+                                        div(class='ribbon')
+                                            div(class='text') New
+                                    div(class='desc text-left')
+                                        p You can promote your main project here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.
+                                    a(class='btn btn-cta-secondary' href='#' target='_blank')
+                                        i(class='fas fa-thumbs-up')
+                                        |  Back my project
+                                
+                                hr(class='divider')
+
+                                div(class='item row')
+                                    a(class='col-md-4 col-12' href='#' target='_blank')
+                                        img(class='img-fluid project-image' src='/images/project-1.png' alt='project name')
+                                    div(class='desc col-md-8 col-12')
+                                        h3(class='title')
+                                            a(href='' target='_blank') Instance - Bootstrap 4 Portfolio Theme for Aspiring Full Stack Developers
+                                        p(class='mb-2') You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.
+                                        p
+                                            a(class='more-link' href='#' target='_blank')
+                                                i(class='fas fa-external-link-alt')
+                                                | Find out more
 
                     section(class='projects section')
                         div(class='section-inner')
@@ -74,6 +113,13 @@ html(lang='en')
                         div(class='section-inner')
                             h2(class='heading') Work Experience
                             div(class='content')
+                                div(class='item')
+                                    h3(class='title') Co-Founder &amp; Lead Developer - 
+                                        span(class='place')
+                                            a(href='#') Startup Hub
+                                        |  
+                                        span(class='year') (2014 - Present)
+                                    p Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
 
                     section(class='github section')
                         div(class='section-inner')
@@ -98,21 +144,145 @@ html(lang='en')
                         div(class='section-inner')
                             h2(class='heading') Skills
                             div(class='content')
+                                p(class='intro') Intro about your skills goes here. Keep the list lean and only show your primary skillset. You can always provide a link to your Linkedin or Coderwall profile so people can get more info there.
+                                div(class='skillset')
+                                    div(class='item')
+                                        h3(class='level-title') Python &amp; Django
+                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
+                                                i(class='fas fa-info-circle')
+                                                | Expert
+                                        div(class='level-bar')
+                                            div(class='level-bar-inner' data-level='96%')
+                                            |                                       
+                                        |                                  
+
+                                    div(class='item')
+                                        h3(class='level-title') Javascript &amp; JQuery
+                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
+                                                i(class='fas fa-info-circle')
+                                                | Expert
+                                        div(class='level-bar')
+                                            div(class='level-bar-inner' data-level='96%')
+                                            |                                       
+                                        |                                  
+
+                                    div(class='item')
+                                        h3(class='level-title') HTML5, CSS3, SASS &amp; LESS
+                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
+                                                i(class='fas fa-info-circle')
+                                                | Expert
+                                        div(class='level-bar')
+                                            div(class='level-bar-inner' data-level='96%')
+                                            |                                       
+                                        |                                  
+                                    
+                                    div(class='item')
+                                        h3(class='level-title') Ruby on Rails
+                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
+                                                i(class='fas fa-info-circle')
+                                                | Expert
+                                        div(class='level-bar')
+                                            div(class='level-bar-inner' data-level='96%')
+                                            |                                       
+                                        |                                  
+                                    
+                                    div(class='item')
+                                        h3(class='level-title') Python &amp; Django
+                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
+                                                i(class='fas fa-info-circle')
+                                                | Expert
+                                        div(class='level-bar')
+                                            div(class='level-bar-inner' data-level='96%')
+                                            |                                       
+                                        |                                  
+                                    
+                                    div(class='item')
+                                        h3(class='level-title') Javascript &amp; JQuery
+                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
+                                                i(class='fas fa-info-circle')
+                                                | Expert
+                                        div(class='level-bar')
+                                            div(class='level-bar-inner' data-level='96%')
+                                            |                                       
+                                        |                                  
+
+                                    div(class='item')
+                                        h3(class='level-title') HTML5, CSS3, SASS &amp; LESS
+                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
+                                                i(class='fas fa-info-circle')
+                                                | Expert
+                                        div(class='level-bar')
+                                            div(class='level-bar-inner' data-level='96%')
+                                            |                                       
+                                        |                                  
+                                    
+                                    div(class='item')
+                                        h3(class='level-title') Ruby on Rails
+                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
+                                                i(class='fas fa-info-circle')
+                                                | Expert
+                                        div(class='level-bar')
+                                            div(class='level-bar-inner' data-level='96%')
+                                            |                                       
+                                        |                                  
+
+                                    p
+                                        a(class='more-link' href='#')
+                                            i(class='fas fa-external-link-alt')
+                                            | More on Coderwall
 
                     aside(class='testimonials aside section')
                         div(class='section-inner')
                             h2(class='heading') Testimonials
                             div(class='content')
+                                div(class='item')
+                                    blockquote(class='quote')
+                                        p
+                                            i(class='fas fa-quote-left')
+                                            | James is an excellent software engineer and he is passionate about what he does. You can totally count on him to deliver your projects!
+                                    p(class='source')
+                                        span(class='name') Time Adams
+                                        br
+                                        span(class='title') Curabitur commodo
+
+                                    p
+                                        a(class='more-link' href='#')
+                                            i(class='fas fa-external-link-alt')
+                                            | More on Linkedin
 
                     aside(class='education aside section')
                         div(class='section-inner')
                             h2(class='heading') Education
                             div(class='content')
+                                div(class='item')
+                                    h3(class='title')
+                                        i(class='fas fa-graduation-cap')
+                                        |  BSc Computer Science
+                                    h4(class='university') University of Missouri - St. Louis 
+                                        span(class='year') (2017-present)
+                                    h4(class='university') St. Charles Community College 
+                                        span(class='year') (2015-2017)
 
                     aside(class='languages aside section')
                         div(class='section-inner')
                             h2(class='heading') Languages
                             div(class='content')
+                                ul(class='list-unstyled')
+                                    li(class='item')
+                                        span(class='title')
+                                            strong English:
+                                        span(class='level') Native Speaker 
+                                            br(class='visible-xs')
+                                            i(class='fas fa-star')
+                                            |  
+                                            i(class='fas fa-star')
+                                            |  
+                                            i(class='fas fa-star')
+                                            |  
+                                            i(class='fas fa-star')
+                                            |  
+                                            i(class='fas fa-star')
+                                            |  
 
                     aside(class='blog aside section')
                         div(class='section-inner')
@@ -123,6 +293,23 @@ html(lang='en')
                         div(class='section-inner')
                             h2(class='heading') Favourite coding music
                             div(class='content')
+                                ul(class='list-unstyled')
+                                    li
+                                        i(class='fas fa-headphones')
+                                        |  
+                                        a(href='#') Testing
+                                    li
+                                        i(class='fas fa-headphones')
+                                        |  
+                                        a(href='#') Testing
+                                    li
+                                        i(class='fas fa-headphones')
+                                        |  
+                                        a(href='#') Testing
+                                    li
+                                        i(class='fas fa-headphones')
+                                        |  
+                                        a(href='#') Testing
 
                     aside(class='credits aside section')
                         div(class='section-inner')
