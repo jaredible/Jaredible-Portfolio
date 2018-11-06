@@ -1,8 +1,8 @@
-$(function() {
+$(function () {
     $('.level-bar-inner').css('width', '0');
 
-    $(window).on('load', function() {
-        $('.level-bar-inner').each(function() {
+    $(window).on('load', function () {
+        $('.level-bar-inner').each(function () {
             var itemWidth = $(this).data('level');
 
             $(this).animate({
@@ -13,24 +13,13 @@ $(function() {
 
     $('.level-label').tooltip();
 
-    var modal = document.getElementById('myModal');
-    var btn = document.getElementById('myBtn');
-    var span = document.getElementsByClassName('close')[0];
+    $('#contact-modal-close').click(function () {
+        console.log('Close');
+        // TODO: clear contents
+    });
 
-    btn.onclick = function() {
-        modal.style.display = 'block';
-        console.log('Testing - btn onclick');
-    }
-
-    span.onclick = function() {
-        modal.style.display = 'none';
-        console.log('Testing - span onclick');
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-            console.log('Testing - window onclick');
-        }
-    }
+    $('#contact-modal-send').click(function () {
+        console.log('Send');
+        // TODO: send contents to back-end
+    });
 });

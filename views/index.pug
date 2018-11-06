@@ -1,12 +1,14 @@
 doctype html
 html(lang='en')
     head
-        title= title
+        title Jared Diehl's Portfolio
 
         meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         meta(name='description' content='Testing Description')
         meta(name='author' content='Testing Author')
+        link(rel='shortcut icon' href='/favicon.ico')
 
         link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic')
         link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,700')
@@ -14,32 +16,30 @@ html(lang='en')
         link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css')
         link(rel='stylesheet' href='/css/styles.css')
     body
-        div(id='myModal' class='modal')
-            div(class='modal-content')
-                div(class='modal-header')
-                    span(class='close') &times;
-                    h2 Modal Header
-                div(class='modal-body')
-                    p Some text in the Modal body
-                    p Some other text...
-                div(class='modal-footer')
-                    h3 Modal Footer
+        div(id='contact-modal' class='modal fade' tabindex='-1' role='dialog' aria-labelledby='contact-modal-label' aria-hidden='true')
+            div(class='modal-dialog modal-dialog-centered' role='document')
+                di(class='modal-content')
+                    div(class='modal-header')
+                        h5(id='contact-modal-label' class='modal-title') New message to Jared
+                        button(type='button' class='close' data-dismiss='modal' aria-label='Close')
+                            span(aria-hidden='true') &times;
+                    div(class='modal-body')
+                        form
+                            div(class='form-group')
+                                input(type='text' id='recipient-email' class='form-control' placeholder='Your Email Address')
+                            div(class='form-group')
+                                textarea(id='message-text' class='form-control' placeholder='Your Message')
+                    div(class='modal-footer')
+                        button(type='button' id='contact-modal-close' class='btn btn-cta-secondary' data-dismiss='modal') Close
+                        button(type='button' id='contact-modal-send' class='btn btn-cta-primary') Send message
                     
         header(class='header')
             div(class='container clearfix')
                 img(class='profile-image img-fluid float-left' src='/images/profile.png' alt='Jared Diehl')
                 div(class='profile-content float-left')
                     h1(class='name') Jared Diehl
-                    h2(class='desc') Full Stack Developer
+                    h2(class='desc') Application Software Developer
                     ul(class='social list-inline')
-                        li(class='list-inline-item')
-                            a(href='https://twitter.com/jaredmdiehl')
-                                i(class='fab fa-twitter')
-                        |                    
-                        li(class='list-inline-item')
-                            a(href='https://plus.google.com/109388026913305212209')
-                                i(class='fab fa-google-plus-g')
-                        |                    
                         li(class='list-inline-item')
                             a(href='https://www.linkedin.com/in/jared-michael-diehl/')
                                 i(class='fab fa-linkedin-in')
@@ -49,15 +49,27 @@ html(lang='en')
                                 i(class='fab fa-github-alt')
                         |                    
                         li(class='list-inline-item')
+                            a(href='https://www.facebook.com/Jaredible-569384850178383')
+                                i(class='fab fa-facebook')
+                        |                    
+                        li(class='list-inline-item')
+                            a(href='https://twitter.com/jaredmdiehl')
+                                i(class='fab fa-twitter')
+                        |                    
+                        li(class='list-inline-item')
+                            a(href='https://codepen.io/Jaredible')
+                                i(class='fab fa-codepen')
+                        |                    
+                        li(class='list-inline-item')
                             a(href='https://stackoverflow.com/users/story/8322371')
                                 i(class='fab fa-stack-overflow')
                         |                    
                         li(class='list-inline-item last-item')
-                            a(href='https://codepen.io/Jaredible')
-                                i(class='fab fa-codepen')
+                            a(href='https://www.youtube.com/channel/UCAUiywLH61_vV33R9n1hLvQ?view_as=subscriber')
+                                i(class='fab fa-youtube')
                         |                    
                     |  
-                button(id='myBtn' class='btn btn-cta-primary float-right')
+                button(type='button' class='btn btn-cta-primary float-right' data-toggle='modal' data-target='#contact-modal')
                     i(class='fas fa-paper-plane')
                     |  Contact Me
                 |               
@@ -69,7 +81,7 @@ html(lang='en')
                         div(class='section-inner')
                             h2(class='heading') About Me
                             div(class='content')
-                                p Write a brief intro about yourself. It's a good idea to include your personal interests and hobbies as well. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec. Commodo ligula eget dolor. Aenean massa.
+                                p= aboutMe
 
                     section(class='latest section')
                         div(class='section-inner')
@@ -108,22 +120,38 @@ html(lang='en')
                         div(class='section-inner')
                             h2(class='heading') Other Projects
                             div(class='content')
+                                div(class='item')
+                                    h3(class='title')
+                                        a(href='#') Pillar - Free Bootstrap 4 Resume/CV Template for Developers
+                                        |  
+                                        span(class='badge badge-theme') Free
+                                    p(class='summary') Provide a brief description of your project. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatu.
+                                    p
+                                        a(class='more-link' href='#' target='_blank')
+                                            i(class='fas fa-external-link-alt')
+                                            | Find out more
+                                
+                                a(class='btn btn-cta-secondary' href='#') More on CoderWall 
+                                    i(class='fas fa-chevron-right')
 
                     section(class='experience section')
                         div(class='section-inner')
                             h2(class='heading') Work Experience
                             div(class='content')
                                 div(class='item')
-                                    h3(class='title') Co-Founder &amp; Lead Developer - 
+                                    h3(class='title') .Net Developer - 
                                         span(class='place')
-                                            a(href='#') Startup Hub
+                                            a(href='https://www.accenture.com') Accenture
+                                            |  Internship
                                         |  
-                                        span(class='year') (2014 - Present)
+                                        span(class='year') (June 2018 - August 2018)
                                     p Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
 
                     section(class='github section')
                         div(class='section-inner')
                             h2(class='heading') My GitHub
+                            div(class='content')
+                                p Coming soon...
 
                 div(class='secondary col-lg-4 col-12')
                     aside(class='info aside section')
@@ -144,87 +172,19 @@ html(lang='en')
                         div(class='section-inner')
                             h2(class='heading') Skills
                             div(class='content')
-                                p(class='intro') Intro about your skills goes here. Keep the list lean and only show your primary skillset. You can always provide a link to your Linkedin or Coderwall profile so people can get more info there.
+                                p(class='intro') These are bottom-line estimates of my primary skillset. My LinkedIn and Coderwall will have more information.
                                 div(class='skillset')
-                                    div(class='item')
-                                        h3(class='level-title') Python &amp; Django
-                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
-                                                i(class='fas fa-info-circle')
-                                                | Expert
-                                        div(class='level-bar')
-                                            div(class='level-bar-inner' data-level='96%')
-                                            |                                       
-                                        |                                  
-
-                                    div(class='item')
-                                        h3(class='level-title') Javascript &amp; JQuery
-                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
-                                                i(class='fas fa-info-circle')
-                                                | Expert
-                                        div(class='level-bar')
-                                            div(class='level-bar-inner' data-level='96%')
-                                            |                                       
-                                        |                                  
-
-                                    div(class='item')
-                                        h3(class='level-title') HTML5, CSS3, SASS &amp; LESS
-                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
-                                                i(class='fas fa-info-circle')
-                                                | Expert
-                                        div(class='level-bar')
-                                            div(class='level-bar-inner' data-level='96%')
-                                            |                                       
-                                        |                                  
-                                    
-                                    div(class='item')
-                                        h3(class='level-title') Ruby on Rails
-                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
-                                                i(class='fas fa-info-circle')
-                                                | Expert
-                                        div(class='level-bar')
-                                            div(class='level-bar-inner' data-level='96%')
-                                            |                                       
-                                        |                                  
-                                    
-                                    div(class='item')
-                                        h3(class='level-title') Python &amp; Django
-                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
-                                                i(class='fas fa-info-circle')
-                                                | Expert
-                                        div(class='level-bar')
-                                            div(class='level-bar-inner' data-level='96%')
-                                            |                                       
-                                        |                                  
-                                    
-                                    div(class='item')
-                                        h3(class='level-title') Javascript &amp; JQuery
-                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
-                                                i(class='fas fa-info-circle')
-                                                | Expert
-                                        div(class='level-bar')
-                                            div(class='level-bar-inner' data-level='96%')
-                                            |                                       
-                                        |                                  
-
-                                    div(class='item')
-                                        h3(class='level-title') HTML5, CSS3, SASS &amp; LESS
-                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
-                                                i(class='fas fa-info-circle')
-                                                | Expert
-                                        div(class='level-bar')
-                                            div(class='level-bar-inner' data-level='96%')
-                                            |                                       
-                                        |                                  
-                                    
-                                    div(class='item')
-                                        h3(class='level-title') Ruby on Rails
-                                            span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title='You can use the tooltip to explain more about your skill level...')
-                                                i(class='fas fa-info-circle')
-                                                | Expert
-                                        div(class='level-bar')
-                                            div(class='level-bar-inner' data-level='96%')
-                                            |                                       
-                                        |                                  
+                                    - var prestiges = ['Novice', 'Beginner', 'Intermediate', 'Advanced', 'Expert', 'God'];
+                                    each skill in skills
+                                        div(class='item')
+                                            h3(class='level-title')= skill.name
+                                                span(class='level-label' data-toggle='tooltip' data-placement='left' data-animation='true' title=skill.tooltip)
+                                                    i(class='fas fa-info-circle')
+                                                    | #{prestiges[parseInt(skill.percent / 20)]}
+                                            div(class='level-bar')
+                                                div(class='level-bar-inner' data-level=skill.percent + '%')
+                                                |                                       
+                                            |                                  
 
                                     p
                                         a(class='more-link' href='#')
@@ -235,20 +195,7 @@ html(lang='en')
                         div(class='section-inner')
                             h2(class='heading') Testimonials
                             div(class='content')
-                                div(class='item')
-                                    blockquote(class='quote')
-                                        p
-                                            i(class='fas fa-quote-left')
-                                            | James is an excellent software engineer and he is passionate about what he does. You can totally count on him to deliver your projects!
-                                    p(class='source')
-                                        span(class='name') Time Adams
-                                        br
-                                        span(class='title') Curabitur commodo
-
-                                    p
-                                        a(class='more-link' href='#')
-                                            i(class='fas fa-external-link-alt')
-                                            | More on Linkedin
+                                p Coming soon...
 
                     aside(class='education aside section')
                         div(class='section-inner')
@@ -258,10 +205,16 @@ html(lang='en')
                                     h3(class='title')
                                         i(class='fas fa-graduation-cap')
                                         |  BSc Computer Science
-                                    h4(class='university') University of Missouri - St. Louis 
-                                        span(class='year') (2017-present)
+                                    h4(class='university') University of Missouri-St. Louis 
+                                        span(class='year') (2017-Present)
                                     h4(class='university') St. Charles Community College 
                                         span(class='year') (2015-2017)
+                                div(class='item')
+                                    h3(class='title')
+                                        i(class='fas fa-graduation-cap')
+                                        |  LC101
+                                    h4(class='university') LaunchCode 
+                                        span(class='year') (2017-2018)
 
                     aside(class='languages aside section')
                         div(class='section-inner')
@@ -271,7 +224,8 @@ html(lang='en')
                                     li(class='item')
                                         span(class='title')
                                             strong English:
-                                        span(class='level') Native Speaker 
+                                        span(class='level')
+                                            |   Native Speaker  
                                             br(class='visible-xs')
                                             i(class='fas fa-star')
                                             |  
@@ -283,11 +237,20 @@ html(lang='en')
                                             |  
                                             i(class='fas fa-star')
                                             |  
+                                    li(class='item')
+                                        span(class='title')
+                                            strong French:
+                                        span(class='level')
+                                            |   Novice 
+                                            br(class='visible-xs')
+                                            i(class='fas fa-star-half')
+                                            |  
 
                     aside(class='blog aside section')
                         div(class='section-inner')
                             h2(class='heading') Latest Blog Posts
-                            div(class='content')
+                            p Coming soon...
+                            div(id='rss-feeds' class='content')
 
                     aside(class='list music aside section')
                         div(class='section-inner')
@@ -315,6 +278,7 @@ html(lang='en')
                         div(class='section-inner')
                             h2(class='heading') Credits
                             div(class='content')
+                                p Coming soon...
 
         footer(class='footer')
             div(class='container text-center')
