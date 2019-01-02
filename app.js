@@ -5,8 +5,9 @@ const bodyParser = require('body-parser');
 const app = express();
 const server = require('http').Server(app);
 
-const PORT = 3000;
-const HOST = 'localhost';
+const PORT = process.env.port || 8001;
+const HOST = process.env.host || 'localhost';
+const ENV = app.get('env');
 
 app.use(bodyParser.json());
 app.set('view engine', 'pug');
@@ -80,6 +81,5 @@ app.use((err, req, res, next) => {
 });
 
 server.listen(PORT, HOST, () => {
-    var env = app.get('env');
-    console.log(`${env.charAt(0).toUpperCase() + env.substring(1)} app listening at http://${server.address().address}:${server.address().port}`);
+    console.log(`${ENV.charAt(0).toUpperCase() + ENV.substring(1)} app listening at http://${server.address().address}:${server.address().port}`);
 });
