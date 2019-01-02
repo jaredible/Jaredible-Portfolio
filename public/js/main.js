@@ -22,8 +22,4 @@ $(function () {
         console.log('Send');
         // TODO: send contents to back-end
     });
-
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-        $('.header').append('Testing');
-    }
 });
